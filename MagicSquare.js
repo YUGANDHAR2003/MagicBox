@@ -21,7 +21,7 @@ function generateRandomMagicSquare() {
  */
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
@@ -46,7 +46,7 @@ function createMagicSquare(numbers) {
  * @returns {boolean} True if it's a valid magic square, false otherwise.
  */
 function isValidMagicSquare(square) {
-    const targetSum = square[0].reduce((a, b) => a + b, 0);
+    let targetSum = square[0].reduce((a, b) => a + b, 0);
     for (let i = 0; i < 3; i++) {
         if (square[i].reduce((a, b) => a + b, 0) !== targetSum) {
             return false;
@@ -79,5 +79,5 @@ function printTheGrid(grid) {
 }
 
 // Generate and print a random 3x3 magic square
-const magicSquare = generateRandomMagicSquare();
+let magicSquare = generateRandomMagicSquare();
 printTheGrid(magicSquare);
