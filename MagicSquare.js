@@ -71,8 +71,8 @@ function isValidMagicSquare(square) {
 function printTheGrid(grid) {
     console.log("-------------");
     for (let i = 0; i < grid.length; i++) {
-        const row = grid[i].map((num) => `| ${num} `).join('') + '|';
-        const separator = i === grid.length - 1 ? "-------------" : "----+---+---";
+        let row = grid[i].map((num) => `| ${num} `).join('') + '|';
+        let separator = i === grid.length - 1 ? "-------------" : "----+---+---";
         console.log(row);
         console.log(separator);
     }
